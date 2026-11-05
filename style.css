@@ -58,7 +58,6 @@ body {
 .hero-photo {
     position: absolute;
     inset: 0;
-    /* ЗДЕСЬ БЫЛА ОШИБКА, ТЕПЕРЬ ИСПРАВЛЕНО (добавлена точка с запятой) */
     background: url('hero.jpg') center/cover no-repeat;
     transform: scale(1.05);
     animation: slowZoom 20s ease-in-out infinite alternate;

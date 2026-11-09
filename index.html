@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen</title>
-  </head>
-  <body>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
-<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -38,7 +26,6 @@
     <div class="container">
         <h2 class="screen-title">Входной билет на ферму</h2>
 
-        <!-- ВОТ ЗДЕСЬ ДОБАВЛЕН КЛАСС photo-card ДЛЯ ЦЕНТРИРОВАНИЯ -->
         <figure class="photo-card">
             <img src="https://i.ibb.co/dwhzT5Kc/d86f5872-3798-4755-b3e4-c88df2101b1c.jpg" alt="Лошади на ферме Владимировка">
         </figure>
@@ -46,7 +33,6 @@
         <p class="lead">Мы ждём вас в гости — <strong>совершенно бесплатно</strong>.</p>
         <p class="lead-sub">Гуляйте по территории, знакомьтесь с лошадьми и наслаждайтесь природой <span class="underline">без ограничения по времени</span>.</p>
 
-        <!-- ВИДЕО КАК ГИФКА -->
         <div class="video-inline">
             <video autoplay muted loop playsinline preload="auto">
                 <source src="https://cdn.imgpile.com/f/sMVqVN0_wm.mp4" type="video/mp4">
@@ -56,14 +42,14 @@
         <div class="note">
             <span class="asterisk">*</span>
             <div class="note-body">
-                <p><strong>Прокат на территории</strong> — для самых маленьких: <span class="price-inline"> от 300 ₽</span></p>
+                <p><strong>Прокат на территории</strong> — для самых маленьких: <span class="price-inline">от 300 ₽</span></p>
                 <p><strong>Морковка</strong> для угощения лошадей: <span class="price-inline">300 ₽</span></p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ ЭКРАН 3: КОННЫЕ ПРОГУЛКИ ============ -->
+<!-- ============ ЭКРАН 3: КОННЫЕ ПРОГУЛКИ (ОБНОВЛЕНО) ============ -->
 <section class="screen screen-dark screen-photo">
     <div class="container">
         <h2 class="screen-title light">Конные прогулки</h2>
@@ -90,10 +76,17 @@
                 <span class="price-dots"></span>
                 <span class="price-amount">2 800 ₽ <em>с человека</em></span>
             </div>
+            
+            <!-- НОВЫЕ МАРШРУТЫ 2ч 30мин -->
             <div class="price-row">
-                <span class="price-name">2 часа 30 минут</span>
+                <span class="price-name">2 часа 30 минут <em>(до 3 человек)</em></span>
                 <span class="price-dots"></span>
-                <span class="price-amount">4 500 ₽ <em>с человека (до 3 человек)</em></span>
+                <span class="price-amount">4 500 ₽<em>с человека</em></span>
+            </div>
+            <div class="price-row">
+                <span class="price-name">2 часа 30 минут <em>(свыше 3 человек)</em></span>
+                <span class="price-dots"></span>
+                <span class="price-amount">3 000 ₽ <em>с человека</em></span>
             </div>
         </div>
     </div>
@@ -123,11 +116,12 @@
             <div class="price-row">
                 <span class="price-name">1 час 45 минут</span>
                 <span class="price-dots"></span>
-                <span class="price-amount">3 000 ₽</span>
+                <span class="price-amount">3 200 ₽</span>
             </div>
         </div>
     </div>
 </section>
+
 <!-- ============ ЭКРАН 5: ФРИЗСКИЕ ЛОШАДИ ============ -->
 <section class="screen screen-dark">
     <div class="container">
@@ -159,7 +153,6 @@
                 <span class="price-dots"></span>
                 <span class="price-amount">3 500 – 4 500 ₽</span>
             </div>
-            <!-- НОВЫЕ ЦЕНЫ -->
             <div class="price-row">
                 <span class="price-name">1 час 45 минут</span>
                 <span class="price-dots"></span>
@@ -180,7 +173,6 @@
 <section class="screen">
     <div class="container">
         
-        <!-- БЛОК 1: ФОТОСЕССИЯ С ЛОШАДЬМИ -->
         <figure class="photo-card">
             <img src="https://i.ibb.co/0jL1WMTC/6556da5a-1fc0-452b-aae9-f498a0d127d0.jpg" alt="Фотосессии с лошадьми">
         </figure>
@@ -196,7 +188,6 @@
             </div>
         </div>
         
-        <!-- СНОСКА ПРО ФОТОГРАФА (ТОЛЬКО ЗДЕСЬ) -->
         <div class="note" style="margin-top: 32px;">
             <span class="asterisk">*</span>
             <div class="note-body">
@@ -204,11 +195,8 @@
             </div>
         </div>
 
-
-        <!-- БЛОК 2: ФОТОСЕССИЯ ПО ТЕРРИТОРИИ (С НОВЫМ ФОТО) -->
         <div class="anim-house reveal-block" style="margin-top: 100px;">
             <figure class="photo-card">
-                <!-- НОВОЕ ФОТО -->
                 <img src="https://i.ibb.co/35Z186QG/579a12ec-f569-4485-ba84-9578cc4e671a.jpg" alt="Фотосессии по территории">
             </figure>
 
@@ -216,7 +204,6 @@
             <p class="screen-subtitle">Прогулка по живописным местам фермы</p>
 
             <div class="price-card simple">
-                <!-- Я ПОМЕНЯЛ МЕСТАМИ, ЧТОБЫ БЫЛО ЛОГИЧНЕЕ (БУДНИ ДЕШЕВЛЕ) -->
                 <div class="price-row">
                     <span class="price-name">Будние дни</span>
                     <span class="price-dots"></span>
@@ -232,15 +219,14 @@
 
     </div>
 </section>
+
 <!-- ============ ЭКРАН 7: АРЕНДА БЕСЕДОК ============ -->
 <section class="screen screen-dark">
     <div class="container">
         <h2 class="screen-title light">Аренда беседок</h2>
         <p class="screen-subtitle light">Уютные места для отдыха большой компанией</p>
 
-        <!-- 3 КРУПНЫЕ КАРТОЧКИ -->
         <div class="pavilions-grid">
-            
             <div class="pavilion-card">
                 <div class="pavilion-img-wrap">
                     <img src="https://i.ibb.co/VcwLcQXs/d023af34-ab24-4c0d-ab62-c8c48d2c3417.jpg" alt="Кованая беседка">
@@ -251,7 +237,6 @@
                 <div class="pavilion-price">2 000 ₽</div>
             </div>
 
-            <!-- БЕСЕДКА ИЗ СРУБА (С ПОЛНЫМ СПИСКОМ ЦЕН) -->
             <div class="pavilion-card">
                 <div class="pavilion-img-wrap">
                     <img src="https://i.ibb.co/LzpDh50n/f5dbb0d4-3d1d-4ffd-9c4c-34b95ccdeca6.jpg" alt="Беседка из сруба">
@@ -266,7 +251,6 @@
                 </div>
             </div>
 
-            <!-- КИРПИЧНАЯ -->
             <div class="pavilion-card">
                 <div class="pavilion-img-wrap">
                     <img src="https://i.ibb.co/j9tfLbTn/e9e52708-d750-49d3-860c-b0cd933223a8.jpg" alt="Кирпичная беседка">
@@ -278,12 +262,10 @@
                     <div class="p-price-row"><span>до 15 чел.</span> <span>8 000 ₽</span></div>
                 </div>
             </div>
-
         </div>
 
         <p class="pavilion-note">* Точная стоимость зависит от количества человек и выбранной беседки.</p>
 
-        <!-- КАРУСЕЛЬ (НОВЫЕ ФОТО ТЕРРИТОРИИ) -->
         <div class="fence-gallery-wrap">
             <div class="fence-gallery-track">
                 <div class="fence-gallery-item">
@@ -310,8 +292,6 @@
                     <img class="fence-gallery-bg" src="https://i.ibb.co/XvMbCdK/9ff30e0a-5a15-431e-ad6d-429ea0586fbf.jpg" alt="">
                     <img class="fence-gallery-main" src="https://i.ibb.co/XvMbCdK/9ff30e0a-5a15-431e-ad6d-429ea0586fbf.jpg" alt="Территория 6">
                 </div>
-
-                <!-- ДУБЛИКАТ ДЛЯ БЕСКОНЕЧНОСТИ -->
                 <div class="fence-gallery-item">
                     <img class="fence-gallery-bg" src="https://i.ibb.co/xSYPFFsV/ee28465c-641a-49a6-8969-cf669abac071.jpg" alt="">
                     <img class="fence-gallery-main" src="https://i.ibb.co/xSYPFFsV/ee28465c-641a-49a6-8969-cf669abac071.jpg" alt="Территория 1">
@@ -319,22 +299,6 @@
                 <div class="fence-gallery-item">
                     <img class="fence-gallery-bg" src="https://i.ibb.co/B53QGky7/144adc50-4405-4ef2-8f64-b46a22ee8048.jpg" alt="">
                     <img class="fence-gallery-main" src="https://i.ibb.co/B53QGky7/144adc50-4405-4ef2-8f64-b46a22ee8048.jpg" alt="Территория 2">
-                </div>
-                <div class="fence-gallery-item">
-                    <img class="fence-gallery-bg" src="https://i.ibb.co/k2ch8Tn4/1f9c47a4-8bf7-4a2d-bf4f-e1c73b9cb6f3.jpg" alt="">
-                    <img class="fence-gallery-main" src="https://i.ibb.co/k2ch8Tn4/1f9c47a4-8bf7-4a2d-bf4f-e1c73b9cb6f3.jpg" alt="Территория 3">
-                </div>
-                <div class="fence-gallery-item">
-                    <img class="fence-gallery-bg" src="https://i.ibb.co/v4mfH1kk/7edbaa2c-f655-444d-887c-594d0718af2a.jpg" alt="">
-                    <img class="fence-gallery-main" src="https://i.ibb.co/v4mfH1kk/7edbaa2c-f655-444d-887c-594d0718af2a.jpg" alt="Территория 4">
-                </div>
-                <div class="fence-gallery-item">
-                    <img class="fence-gallery-bg" src="https://i.ibb.co/27XfMYxr/6de22aa4-b6e9-4c10-9e84-168d842e6542.jpg" alt="">
-                    <img class="fence-gallery-main" src="https://i.ibb.co/27XfMYxr/6de22aa4-b6e9-4c10-9e84-168d842e6542.jpg" alt="Территория 5">
-                </div>
-                <div class="fence-gallery-item">
-                    <img class="fence-gallery-bg" src="https://i.ibb.co/XvMbCdK/9ff30e0a-5a15-431e-ad6d-429ea0586fbf.jpg" alt="">
-                    <img class="fence-gallery-main" src="https://i.ibb.co/XvMbCdK/9ff30e0a-5a15-431e-ad6d-429ea0586fbf.jpg" alt="Территория 6">
                 </div>
             </div>
         </div>
@@ -354,12 +318,19 @@
 
             <div class="price-card simple">
                 <div class="price-row">
-                    <span class="price-name">Домик из сруба (до 6 чел.) / сутки</span>
+                    <span class="price-name">Домик из сруба  / сутки</span>
                     <span class="price-dots"></span>
                     <span class="price-amount">10 000 ₽</span>
                 </div>
             </div>
             <p class="fine-print">В стоимость домика входит мангальная зона, пользование баней и купелью.</p>
+            
+            <div class="note" style="margin-top: 20px; text-align: left;">
+                <span class="asterisk">*</span>
+                <div class="note-body">
+                    <p><strong>Обратите внимание:</strong> баня рассчитана на <strong>5 человек</strong>.</p>
+                </div>
+            </div>
         </div>
 
         <div class="anim-room reveal-block" style="margin-top: 80px;">
@@ -383,7 +354,6 @@
 <section class="screen">
     <div class="container">
         
-        <!-- БАССЕЙН -->
         <figure class="photo-card">
             <img src="https://i.ibb.co/VpVVTBqY/fb4ca368-5510-4308-bcd1-41981ca875e2.jpg" alt="Бассейн на территории фермы">
         </figure>
@@ -406,24 +376,19 @@
             </div>
         </div>
 
-        <!-- ДРУГИЕ РАЗВЛЕЧЕНИЯ -->
         <div class="anim-house reveal-block" style="margin-top: 100px;">
             <h2 class="screen-title">Развлечения для всей семьи</h2>
             <p class="screen-subtitle">Отдохните и зарядитесь эмоциями</p>
 
-            <!-- Сетка из 2 карточек -->
             <div class="pavilions-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 600px; margin: 0 auto;">
-                
-                <!-- ЗООПАРК -->
                 <div class="pavilion-card" style="background: var(--white); border-color: var(--line);">
                     <div class="pavilion-img-wrap" style="background: #e0d8cc;">
-                        <img src="https://i.ibb.co/WNyPN8R3/dd873d8a-bc85-44d8-a12b-2b6249277a29.jpg" alt="Контактный зоопарк">
+                        <img src="https://i.ibb.co/WNyPN8R3/dd873d8a-bc85-44d8-a12b-2b6249277a29.jpg" alt="Домашний зоопарк">
                     </div>
-                    <h3 style="color: var(--ink);">Контактный зоопарк</h3>
+                    <h3 style="color: var(--ink);">Домашний зоопарк</h3>
                     <p class="pavilion-desc" style="color: var(--ink-soft); min-height: auto;">Познакомьтесь с животными поближе. Отличный опыт для детей и взрослых.</p>
                 </div>
 
-                <!-- ДЕТСКАЯ ПЛОЩАДКА -->
                 <div class="pavilion-card" style="background: var(--white); border-color: var(--line);">
                     <div class="pavilion-img-wrap" style="background: #e0d8cc;">
                         <img src="https://i.ibb.co/Pvz4XT8r/642b9afe-7268-4d89-b7ea-e75727399460.jpg" alt="Детская площадка">
@@ -431,13 +396,13 @@
                     <h3 style="color: var(--ink);">Детская площадка</h3>
                     <p class="pavilion-desc" style="color: var(--ink-soft); min-height: auto;">Безопасное место для игр. Ваши дети точно останутся довольны.</p>
                 </div>
-
             </div>
         </div>
 
     </div>
 </section> 
-  <!-- ============ ЭКРАН 9: ГАЛЕРЕЯ ============ -->
+
+<!-- ============ ЭКРАН 9: ГАЛЕРЕЯ ============ -->
 <section class="screen gallery-section">
     <div class="container">
         <h2 class="screen-title">Галерея</h2>
@@ -482,8 +447,6 @@
                 <img class="gallery-bg" src="https://i.ibb.co/XZkvhrXH/05a6c8cb-9fdc-4f90-8886-f301c55e5419.jpg" alt="">
                 <img class="gallery-main" src="https://i.ibb.co/XZkvhrXH/05a6c8cb-9fdc-4f90-8886-f301c55e5419.jpg" alt="Фото 9">
             </div>
-
-            <!-- Дубликат для бесконечной прокрутки -->
             <div class="gallery-item">
                 <img class="gallery-bg" src="https://i.ibb.co/FkmSPCwt/fc48fab5-26fe-4a7c-b5a7-48e64c79faa7.jpg" alt="">
                 <img class="gallery-main" src="https://i.ibb.co/FkmSPCwt/fc48fab5-26fe-4a7c-b5a7-48e64c79faa7.jpg" alt="Фото 1">
@@ -492,48 +455,64 @@
                 <img class="gallery-bg" src="https://i.ibb.co/JjXqjcZR/d861cfa9-2478-4209-91ce-1f3cf4c4face.jpg" alt="">
                 <img class="gallery-main" src="https://i.ibb.co/JjXqjcZR/d861cfa9-2478-4209-91ce-1f3cf4c4face.jpg" alt="Фото 2">
             </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/cK6fd75y/ebe7e9a1-3c0f-44da-8eca-64ffc005a08e.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/cK6fd75y/ebe7e9a1-3c0f-44da-8eca-64ffc005a08e.jpg" alt="Фото 3">
-            </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/YBFL0B4M/eb9560f6-37ac-420e-b9d9-6d1a6c7ac6fa.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/YBFL0B4M/eb9560f6-37ac-420e-b9d9-6d1a6c7ac6fa.jpg" alt="Фото 4">
-            </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/1tNKd1Ct/68befe71-df21-469f-8159-d28a823168c8.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/1tNKd1Ct/68befe71-df21-469f-8159-d28a823168c8.jpg" alt="Фото 5">
-            </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/kg8JD8Dp/af261b7c-e8e8-44b7-a11d-86bcf30f9562.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/kg8JD8Dp/af261b7c-e8e8-44b7-a11d-86bcf30f9562.jpg" alt="Фото 6">
-            </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/Lh97bczJ/c46078e3-f8e6-43cf-bd82-9d631970cbc5.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/Lh97bczJ/c46078e3-f8e6-43cf-bd82-9d631970cbc5.jpg" alt="Фото 7">
-            </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/chKWk3g1/52e2cc97-49de-45a7-bf9c-dd99d297c078.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/chKWk3g1/52e2cc97-49de-45a7-bf9c-dd99d297c078.jpg" alt="Фото 8">
-            </div>
-            <div class="gallery-item">
-                <img class="gallery-bg" src="https://i.ibb.co/XZkvhrXH/05a6c8cb-9fdc-4f90-8886-f301c55e5419.jpg" alt="">
-                <img class="gallery-main" src="https://i.ibb.co/XZkvhrXH/05a6c8cb-9fdc-4f90-8886-f301c55e5419.jpg" alt="Фото 9">
-            </div>
         </div>
     </div>
 </section>
 
-<!-- ============ КОНТАКТЫ ============ -->
+<!-- ============ КАРТА ============ -->
+<section class="screen" style="padding: 50px 0;">
+    <div class="container">
+        <h2 class="screen-title">Как нас найти</h2>
+        <div class="map-wrapper">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=38.550392%2C44.756200&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Forg%3Foid%3D217659606686&z=16" width="100%" height="400" frameborder="0" allowfullscreen="true"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ============ КОНТАКТЫ, ССЫЛКИ И ДОКУМЕНТЫ ============ -->
 <section class="screen screen-contact">
     <div class="container">
         <h2 class="screen-title light">Приезжайте в гости</h2>
         <p class="contact-line">Краснодар, (ст. Убинская), ул Центральная 2/1</p>
-        <p class="contact-line"><a href="tel:+79991234567">+7 (918) 350-39-48</a></p>
+        <p class="contact-line"><a href="tel:+79183503948">+7 (918) 350-39-48</a></p>
         <p class="contact-line">Ежедневно с 9:00 до 20:00</p>
+
+        <!-- ССЫЛКИ НА ОТЗЫВЫ И МЕССЕНДЖЕРЫ -->
+        <div class="contact-buttons">
+            <a href="https://yandex.ru/profile/217659606686?lang=ru&utm_source=copy_link&utm_medium=social&utm_campaign=share" target="_blank" class="btn-contact">⭐ Оставьте отзыв</a>
+            <a href="https://www.instagram.com/ferma_vladimirovka?obrf=MTNrczFlb2hkZ21rag==" target="_blank" class="btn-contact">📷 Мы в Instagram</a>
+            <a href="https://max.ru/u/+79183503948" target="_blank" class="btn-contact">💬 Написать в MAX</a>
+        </div>
+
+        <!-- ДОКУМЕНТЫ -->
+        <div class="documents-block">
+            <h3 class="doc-title">Документы</h3>
+            <p class="doc-subtitle">Нажмите на документ, чтобы открыть и увеличить</p>
+            
+            <!-- "ВЕЕР" ИЗ ДОКУМЕНТОВ -->
+            <div class="doc-fan">
+                <a href="dogovor.pdf" target="_blank" class="doc-card" style="--i: 1;">
+                    <span class="doc-icon">📄</span>
+                    <span>Договор оферты</span>
+                </a>
+                <a href="tehnika.pdf" target="_blank" class="doc-card" style="--i: 0;">
+                    <span class="doc-icon">📄</span>
+                    <span>Правила техники безопасности</span>
+                </a>
+                <a href="dogovor.pdf" target="_blank" class="doc-card" style="--i: -1;">
+                    <span class="doc-icon">📄</span>
+                    <span>Заявление на присоединение</span>
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <footer class="footer">
     <p>© 2026 Конная ферма «Владимировка»</p>
 </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

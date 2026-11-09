@@ -80,7 +80,7 @@
         .catalog-btn-wrap {
             text-align: center;
             margin-top: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 30px; /* Уменьшил отступ снизу, чтобы не было гигантской дыры */
         }
         .catalog-btn {
             display: inline-block;
@@ -383,7 +383,8 @@
             <button id="open-catalog-btn" class="catalog-btn">Каталог лошадей</button>
         </div>
 
-        <div class="note" style="margin-top: 0;">
+        <!-- Убрал style="margin-top: 0;" у сноски, теперь отступ регулируется стандартно и аккуратно -->
+        <div class="note">
             <span class="asterisk">*</span>
             <div class="note-body">
                 <p><strong>Обратите внимание:</strong> в стоимость включена лошадь и коновод. <strong>Услуги фотографа не входят</strong> — вы можете пригласить своего специалиста или заказать его отдельно.</p>
@@ -527,13 +528,13 @@
     </div>
 </section>
 
-<!-- ============ ЭКРАН 8: ПРОЖИВАНИЕ ============ -->
+<!-- ============ ЭКРАН 8: ПРОЖИВАНИЕ (Убрал класс reveal-block, чтобы фото не исчезало) ============ -->
 <section class="screen">
     <div class="container">
         <h2 class="screen-title">Проживание</h2>
         <p class="screen-subtitle">Останьтесь с нами на выходные</p>
 
-        <div class="anim-house reveal-block">
+        <div>
             <figure class="photo-card">
                 <img src="https://i.ibb.co/mFVnDfkL/4109a45c-c080-41c2-9224-df6956d24ad9.jpg" alt="Домик из сруба">
             </figure>
@@ -555,7 +556,7 @@
             </div>
         </div>
 
-        <div class="anim-room reveal-block" style="margin-top: 80px;">
+        <div style="margin-top: 80px;">
             <figure class="photo-card">
                 <img src="https://i.ibb.co/7tjJnp6d/image.webp" alt="Комнаты отдыха">
             </figure>
@@ -790,7 +791,6 @@
         const totalImages = 11; 
         let currentIndex = 1;
 
-        // Убедитесь, что названия файлов совпадают (например, .png или .webp)
         function showImage(index) {
             if (index > totalImages) currentIndex = 1;
             if (index < 1) currentIndex = totalImages;

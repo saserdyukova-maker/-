@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Стили для новых плашек (Предложение руки и сердца / Гендер пати) */
+        /* ========== СТИЛИ ДЛЯ ПЛАШЕК ========== */
         .offer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -44,12 +44,11 @@
             background-position: center;
             z-index: 1;
         }
-        /* Затемнение фона, чтобы текст читался */
         .offer-card::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(20, 15, 8, 0.45); /* Полупрозрачный черный */
+            background: rgba(20, 15, 8, 0.45);
             z-index: 2;
             transition: background 0.3s ease;
         }
@@ -72,20 +71,126 @@
         .offer-price {
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
-            color: #d9b98a; /* Золотистый */
+            color: #d9b98a;
             font-weight: 500;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
+        /* ========== СТИЛИ ДЛЯ КАТАЛОГА ЛОШАДЕЙ ========== */
+        .catalog-btn-wrap {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+        .catalog-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--gold);
+            border-radius: 30px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .catalog-btn:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* Модальное окно галереи */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(20, 15, 8, 0.95);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+            z-index: 10000;
+        }
+        .modal-close:hover {
+            color: var(--gold-light);
+        }
+        .modal-prev, .modal-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            margin-top: -50px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 40px;
+            transition: 0.3s ease;
+            border: none;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transform: translateY(-50%);
+        }
+        .modal-prev { left: 20px; }
+        .modal-next { right: 20px; }
+        .modal-prev:hover, .modal-next:hover {
+            background-color: var(--gold);
+            color: #fff;
+        }
+
         /* Адаптив для телефонов */
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .offer-grid {
-                grid-template-columns: 1fr; /* Встают друг под друга */
+                grid-template-columns: 1fr;
                 gap: 15px;
                 margin-top: 50px;
             }
             .offer-card {
                 height: 160px;
+            }
+            .modal-prev, .modal-next {
+                width: 44px;
+                height: 44px;
+                font-size: 24px;
+            }
+            .modal-close {
+                right: 20px;
+                font-size: 40px;
             }
         }
     </style>
@@ -228,13 +333,11 @@
                 <span class="price-dots"></span>
                 <span class="price-amount">2 200 – 2 600 ₽</span>
             </div>
-            <!-- НОВАЯ СТРОКА -->
             <div class="price-row">
                 <span class="price-name">1 час 25 минут</span>
                 <span class="price-dots"></span>
                 <span class="price-amount">3 000 – 4 000 ₽</span>
             </div>
-            <!-- КОНЕЦ НОВОЙ СТРОКИ -->
             <div class="price-row">
                 <span class="price-name">1 час 25 минут, индивидуально</span>
                 <span class="price-dots"></span>
@@ -275,7 +378,12 @@
             </div>
         </div>
         
-        <div class="note" style="margin-top: 32px;">
+        <!-- КНОПКА КАТАЛОГА ЛОШАДЕЙ -->
+        <div class="catalog-btn-wrap">
+            <button id="open-catalog-btn" class="catalog-btn">Каталог лошадей</button>
+        </div>
+
+        <div class="note" style="margin-top: 0;">
             <span class="asterisk">*</span>
             <div class="note-body">
                 <p><strong>Обратите внимание:</strong> в стоимость включена лошадь и коновод. <strong>Услуги фотографа не входят</strong> — вы можете пригласить своего специалиста или заказать его отдельно.</p>
@@ -304,9 +412,8 @@
             </div>
         </div>
 
-        <!-- ============ НОВЫЕ ПЛАШКИ (ПРЕДЛОЖЕНИЕ РУКИ И СЕРДЦА / ГЕНДЕР ПАТИ) ============ -->
+        <!-- НОВЫЕ ПЛАШКИ -->
         <div class="offer-grid">
-            <!-- Левая плашка -->
             <a href="#" class="offer-card">
                 <div class="offer-card-bg" style="background-image: url('125.jpg');"></div>
                 <div class="offer-content">
@@ -315,7 +422,6 @@
                 </div>
             </a>
             
-            <!-- Правая плашка -->
             <a href="#" class="offer-card">
                 <div class="offer-card-bg" style="background-image: url('135.jpg');"></div>
                 <div class="offer-content">
@@ -324,10 +430,17 @@
                 </div>
             </a>
         </div>
-        <!-- ============ КОНЕЦ НОВЫХ ПЛАШЕК ============ -->
 
     </div>
 </section>
+
+<!-- ============ МОДАЛЬНОЕ ОКНО ГАЛЕРЕИ ============ -->
+<div id="horse-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <button class="modal-prev">&#10094;</button>
+    <img class="modal-content" id="modal-img" alt="Лошадь">
+    <button class="modal-next">&#10095;</button>
+</div>
 
 <!-- ============ ЭКРАН 7: АРЕНДА БЕСЕДОК ============ -->
 <section class="screen screen-dark">
@@ -664,6 +777,60 @@
     <p>© 2026 Конная ферма «Владимировка»</p>
 </footer>
 
-<script src="script.js"></script>
+<!-- ============ СКРИПТ ДЛЯ ГАЛЕРЕИ ============ -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("horse-modal");
+        const btn = document.getElementById("open-catalog-btn");
+        const modalImg = document.getElementById("modal-img");
+        const closeBtn = document.querySelector(".modal-close");
+        const prevBtn = document.querySelector(".modal-prev");
+        const nextBtn = document.querySelector(".modal-next");
+
+        const totalImages = 11; 
+        let currentIndex = 1;
+
+        // Убедитесь, что названия файлов совпадают (например, .png или .webp)
+        function showImage(index) {
+            if (index > totalImages) currentIndex = 1;
+            if (index < 1) currentIndex = totalImages;
+            modalImg.src = currentIndex + ".jpg"; 
+        }
+
+        btn.onclick = function() {
+            modal.classList.add("show");
+            showImage(currentIndex);
+        }
+
+        closeBtn.onclick = function() {
+            modal.classList.remove("show");
+        }
+
+        nextBtn.onclick = function() {
+            currentIndex++;
+            showImage(currentIndex);
+        }
+
+        prevBtn.onclick = function() {
+            currentIndex--;
+            showImage(currentIndex);
+        }
+
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+            }
+        }
+
+        document.addEventListener("keydown", function(e) {
+            if (modal.classList.contains("show")) {
+                if (e.key === "ArrowRight") nextBtn.click();
+                if (e.key === "ArrowLeft") prevBtn.click();
+                if (e.key === "Escape") closeBtn.click();
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

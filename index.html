@@ -14,7 +14,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-top: 80px;
+            margin-top: 40px; /* Уменьшил отступ, чтобы не было дыры */
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -79,8 +79,8 @@
         /* ========== СТИЛИ ДЛЯ КАТАЛОГА ЛОШАДЕЙ ========== */
         .catalog-btn-wrap {
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 30px; /* Уменьшил отступ снизу, чтобы не было гигантской дыры */
+            margin-top: 30px; /* Уменьшил отступ сверху */
+            margin-bottom: 30px; /* Уменьшил отступ снизу */
         }
         .catalog-btn {
             display: inline-block;
@@ -178,7 +178,7 @@
             .offer-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
-                margin-top: 50px;
+                margin-top: 30px;
             }
             .offer-card {
                 height: 160px;
@@ -383,7 +383,7 @@
             <button id="open-catalog-btn" class="catalog-btn">Каталог лошадей</button>
         </div>
 
-        <!-- Убрал style="margin-top: 0;" у сноски, теперь отступ регулируется стандартно и аккуратно -->
+        <!-- Сноска идет сразу за кнопкой, без лишних отступов -->
         <div class="note">
             <span class="asterisk">*</span>
             <div class="note-body">
@@ -391,7 +391,7 @@
             </div>
         </div>
 
-        <div class="anim-house reveal-block" style="margin-top: 100px;">
+        <div class="anim-house reveal-block" style="margin-top: 80px;">
             <figure class="photo-card">
                 <img src="https://i.ibb.co/35Z186QG/579a12ec-f569-4485-ba84-9578cc4e671a.jpg" alt="Фотосессии по территории">
             </figure>
@@ -528,13 +528,13 @@
     </div>
 </section>
 
-<!-- ============ ЭКРАН 8: ПРОЖИВАНИЕ (Убрал класс reveal-block, чтобы фото не исчезало) ============ -->
+<!-- ============ ЭКРАН 8: ПРОЖИВАНИЕ (Вернул анимацию) ============ -->
 <section class="screen">
     <div class="container">
         <h2 class="screen-title">Проживание</h2>
         <p class="screen-subtitle">Останьтесь с нами на выходные</p>
 
-        <div>
+        <div class="anim-house reveal-block">
             <figure class="photo-card">
                 <img src="https://i.ibb.co/mFVnDfkL/4109a45c-c080-41c2-9224-df6956d24ad9.jpg" alt="Домик из сруба">
             </figure>
@@ -556,7 +556,7 @@
             </div>
         </div>
 
-        <div style="margin-top: 80px;">
+        <div class="anim-room reveal-block" style="margin-top: 80px;">
             <figure class="photo-card">
                 <img src="https://i.ibb.co/7tjJnp6d/image.webp" alt="Комнаты отдыха">
             </figure>
@@ -828,6 +828,20 @@
                 if (e.key === "ArrowLeft") prevBtn.click();
                 if (e.key === "Escape") closeBtn.click();
             }
+        });
+
+        // Страховка для анимации появления (чтобы ничего не пропадало)
+        const reveals = document.querySelectorAll('.reveal-block');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
         });
     });
 </script>

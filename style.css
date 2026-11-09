@@ -834,7 +834,7 @@ body {
 .doc-card {
     position: absolute;
     top: 0;
-    left: 50%; /* Ставим в центр */
+    left: 50%;
     width: 160px;
     height: 210px;
     background: var(--white);
@@ -848,8 +848,6 @@ body {
     color: var(--ink);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
-    /* Центрируем и поворачиваем */
     transform-origin: bottom center;
     transform: translateX(-50%) rotate(calc(var(--i) * 15deg)) translateY(calc(abs(var(--i)) * 20px));
     z-index: 10;
@@ -858,7 +856,6 @@ body {
     text-align: center;
 }
 
-/* Красивая иконка документа (лист бумаги) */
 .doc-card::before {
     content: '';
     display: block;
@@ -872,7 +869,6 @@ body {
     box-shadow: 3px 3px 0 rgba(154, 123, 79, 0.2);
 }
 
-/* Полоски внутри иконки */
 .doc-card::after {
     content: '';
     position: absolute;
@@ -890,15 +886,61 @@ body {
     color: var(--ink);
 }
 
-/* Эффект при наведении на весь блок (раскрываем веер) */
 .doc-fan:hover .doc-card {
     transform: translateX(-50%) rotate(calc(var(--i) * 25deg)) translateY(0) translateX(calc(var(--i) * 80px));
 }
 
-/* Эффект при наведении на конкретный документ */
 .doc-card:hover {
     transform: translateX(-50%) rotate(0deg) translateY(-20px) scale(1.1) !important;
     z-index: 20;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     border-color: var(--gold);
+}
+
+/* ============================================
+   СОЦИАЛЬНЫЕ СЕТИ И БЫСТРАЯ СВЯЗЬ
+   ============================================ */
+.social-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.social-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--gold-light);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: var(--gold-light);
+    color: var(--bg-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
 }

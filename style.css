@@ -951,13 +951,13 @@ body {
 .social-icon.2gis { background: #18A955; }
 .social-icon.wa { background: #25D366; }
 
-/* Подписи под иконками отзывов */
+/* Исправленный блок подписей */
 .social-icon-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    text-decoration: none;
+    text-decoration: none !important; /* Убираем подчеркивание у всей ссылки */
     transition: transform 0.3s ease;
 }
 
@@ -967,8 +967,10 @@ body {
 
 .social-label {
     font-size: 0.75rem;
-    color: var(--gold-light);
+    color: #ffffff !important; /* Принудительно белый цвет */
+    text-decoration: none !important; /* Принудительно без подчеркивания */
     text-align: center;
     line-height: 1.2;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
